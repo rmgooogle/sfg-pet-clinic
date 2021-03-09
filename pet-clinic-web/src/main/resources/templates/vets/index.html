@@ -2,9 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>List of Vets</title>
+    <title>Pet Clinic index</title>
 </head>
 <body>
-<h1 th:text="'List of Vets'"> List of Vets...</h1>
+    <h1 th:text="'Index Page'">Index Page</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID1</th>
+            <th>First Name1</th>
+            <th>Last Name1</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--/*@thymesVar id="vet" type="guru.springframework.sfgpetclinic.model.Vet"*/-->
+
+        <tr th:each="vet: ${vets}">
+            <td th:text="${vet.id}">1</td>
+            <td th:text="${vet.firstName}">Joe</td>
+            <td th:text="${vet.lastName}">Buck</td>
+        </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>
