@@ -7,9 +7,6 @@ import guru.springframework.sfgpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-
-
-
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -19,11 +16,9 @@ public class DataLoader implements CommandLineRunner {
 
     public DataLoader(OwnerService ownerService, VetService vetService) {
 
-
         this.ownerService = ownerService;
         this.vetService = vetService;
     }
-
     @Override
     public void run(String... args) throws Exception {
 
