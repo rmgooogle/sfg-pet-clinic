@@ -21,6 +21,18 @@
             <td th:text="${vet.id}">1</td>
             <td th:text="${vet.firstName}">Joe</td>
             <td th:text="${vet.lastName}">Buck</td>
+
+            <td><span th:each="specialty : ${vet.specialities}"
+                      th:if="${vet?.specialities?.size() > 1}"
+                      th:text="${specialty.description + ', '}" />
+                <span th:each="specialty : ${vet.specialities}"
+                      th:if="${vet?.specialities?.size() == 1}"
+                      th:text="${specialty.description }" />
+                <span
+                    th:if="${vet?.specialities?.size() == 0}">none</span></td>
+
+
+
         </tr>
         </tbody>
     </table>
