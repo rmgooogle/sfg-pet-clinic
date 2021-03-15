@@ -5,13 +5,15 @@ import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.PetService;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+/**
+ * Created by jt on 7/21/18.
+ */
 @Service
-public class OwnerServiceMap extends AbstractMapService <Owner, Long> implements OwnerService {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
     private final PetService petService;
@@ -27,13 +29,8 @@ public class OwnerServiceMap extends AbstractMapService <Owner, Long> implements
     }
 
     @Override
-    public void deleteById(Long id) {
-        super.deleteById(id);
-    }
-
-    @Override
-    public void delete(Owner object) {
-        super.delete(object);
+    public Owner findById(Long id) {
+        return super.findById(id);
     }
 
     @Override
@@ -63,13 +60,19 @@ public class OwnerServiceMap extends AbstractMapService <Owner, Long> implements
             return null;
         }
     }
+
     @Override
-    public Owner findById(Long id) {
-        return super.findById(id);
+    public void delete(Owner object) {
+        super.delete(object);
     }
 
     @Override
-    public Owner findLastName(String lastname) {
+    public void deleteById(Long id) {
+        super.deleteById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
         return null;
     }
 }

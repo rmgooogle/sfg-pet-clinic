@@ -7,13 +7,14 @@ import java.util.Set;
  * Created by jt on 7/13/18.
  */
 public class Vet extends Person {
-    private Set<Specialty> specialities = new HashSet<>();
 
-    public Set<Specialty> getSpecialities() {
+    private Set<Speciality> specialities = new HashSet<>();
+
+    public Set<Speciality> getSpecialities() {
         return specialities;
     }
 
-    public void setSpecialities(Set<Specialty> specialities) {
+    public void setSpecialities(Set<Speciality> specialities) {
         this.specialities = specialities;
     }
 }
