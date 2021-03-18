@@ -36,7 +36,7 @@ local.properties
 .loadpath
 .factorypath
 /src/main/resources/rebel.xml
-
+/src/main/resources/application-postgresql.properties
 # External tool builders
 .externalToolBuilders/**
 
