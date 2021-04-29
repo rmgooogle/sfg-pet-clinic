@@ -7,6 +7,7 @@ import java.util.*;
 /**
  * Created by jt on 7/21/18.
  */
+
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
     protected Map<Long, T> map = new HashMap<>();
