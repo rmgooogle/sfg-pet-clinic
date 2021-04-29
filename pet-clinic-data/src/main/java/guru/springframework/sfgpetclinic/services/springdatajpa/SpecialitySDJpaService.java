@@ -9,41 +9,43 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by jt on 8/5/18.
+ */
 @Service
 @Profile("springdatajpa")
 public class SpecialitySDJpaService implements SpecialtyService {
 
-    private final SpecialityRepository specialityRepository;
+    private final SpecialityRepository specialtyRepository;
 
-    public SpecialitySDJpaService(SpecialityRepository specialityRepository) {
-        this.specialityRepository = specialityRepository;
+    public SpecialitySDJpaService(SpecialityRepository specialtyRepository) {
+        this.specialtyRepository = specialtyRepository;
     }
 
     @Override
     public Set<Speciality> findAll() {
-        Set <Speciality> specialities = new HashSet<>();
-        specialityRepository.findAll().forEach(specialities::add);
+        Set<Speciality> specialities = new HashSet<>();
+        specialtyRepository.findAll().forEach(specialities::add);
         return specialities;
     }
 
     @Override
     public Speciality findById(Long aLong) {
-        return specialityRepository.findById(aLong).orElse(null);
+        return specialtyRepository.findById(aLong).orElse(null);
     }
 
     @Override
     public Speciality save(Speciality object) {
-
-        return specialityRepository.save(object);
+        return specialtyRepository.save(object);
     }
 
     @Override
     public void delete(Speciality object) {
-        specialityRepository.delete(object);
+        specialtyRepository.delete(object);
     }
 
     @Override
     public void deleteById(Long aLong) {
-        specialityRepository.deleteById(aLong);
+        specialtyRepository.deleteById(aLong);
     }
 }

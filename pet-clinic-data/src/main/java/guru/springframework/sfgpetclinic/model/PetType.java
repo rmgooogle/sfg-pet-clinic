@@ -8,7 +8,7 @@ import javax.persistence.Table;
  * Created by jt on 7/13/18.
  */
 @Entity
-@Table(name="types")
+@Table(name = "types")
 public class PetType extends BaseEntity {
 
     @Column(name = "name")
@@ -21,5 +21,4 @@ public class PetType extends BaseEntity {
     public void setName(String name) {
         this.name = name;
     }
-
 }

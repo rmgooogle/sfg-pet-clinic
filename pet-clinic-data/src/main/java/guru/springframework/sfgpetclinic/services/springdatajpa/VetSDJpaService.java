@@ -9,9 +9,13 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by jt on 8/5/18.
+ */
 @Service
 @Profile("springdatajpa")
 public class VetSDJpaService implements VetService {
+
     private final VetRepository vetRepository;
 
     public VetSDJpaService(VetRepository vetRepository) {
@@ -23,7 +27,6 @@ public class VetSDJpaService implements VetService {
         Set<Vet> vets = new HashSet<>();
         vetRepository.findAll().forEach(vets::add);
         return vets;
-
     }
 
     @Override
@@ -44,6 +47,5 @@ public class VetSDJpaService implements VetService {
     @Override
     public void deleteById(Long aLong) {
         vetRepository.deleteById(aLong);
-
     }
 }
