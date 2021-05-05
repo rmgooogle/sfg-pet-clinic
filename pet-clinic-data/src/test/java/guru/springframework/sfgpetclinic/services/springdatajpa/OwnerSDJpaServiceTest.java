@@ -81,6 +81,7 @@ class OwnerSDJpaServiceTest {
         when(ownerRepository.save(any())).thenReturn(createOwner3);
         Owner smith = service.save(createOwner3);
         assertEquals(smith,createOwner3);
+        assertNotNull(smith);
     }
 
     @Test
