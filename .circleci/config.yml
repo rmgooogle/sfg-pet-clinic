@@ -4,10 +4,6 @@
 #
 version: 2
 jobs:
-  build:
-    branches:
-      only:
-        - MyRepo
     docker:
       # specify the version you desire here
       - image: circleci/openjdk:11-jdk
@@ -32,6 +28,8 @@ jobs:
             - v1-dependencies-{{ checksum "pom.xml" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
+
+      - run: mvn isntall -DskipTests
 
       - run: mvn dependency:go-offline
 
